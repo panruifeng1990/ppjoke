@@ -3,14 +3,12 @@ package com.prf.libnavcompiler;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.google.auto.service.AutoService;
-import com.google.common.annotations.VisibleForTesting;
 import com.prf.libnavannotation.ActivityDestination;
 import com.prf.libnavannotation.FragmentDestination;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.lang.annotation.Annotation;
 import java.util.HashMap;
@@ -29,9 +27,8 @@ import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.tools.Diagnostic;
 import javax.tools.FileObject;
-import javax.tools.StandardLocation;
 
-import static javax.tools.StandardLocation.*;
+import static javax.tools.StandardLocation.CLASS_OUTPUT;
 
 @AutoService(Processor.class)
 @SupportedSourceVersion(SourceVersion.RELEASE_8)
@@ -39,7 +36,7 @@ import static javax.tools.StandardLocation.*;
 public class NavProcessor extends AbstractProcessor {
     private Messager messager;
     private Filer filer;
-    private static final String OUTPUT_FILE_NAME = "destnation.json";
+    private static final String OUTPUT_FILE_NAME = "destination.json";
     private FileOutputStream fos;
     private OutputStreamWriter writer;
 
