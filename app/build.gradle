@@ -38,4 +38,6 @@ dependencies {
     annotationProcessor project(path: ':libnavcompiler')
 
     implementation 'com.alibaba:fastjson:1.2.59'
+    implementation project(path: ':libnetwork')
+    implementation project(path: ':libcommon')
 }

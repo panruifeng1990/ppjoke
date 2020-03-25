@@ -1,6 +1,7 @@
 package com.prf.ppjoke.ui.find;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +18,12 @@ import androidx.lifecycle.ViewModelProviders;
 
 @FragmentDestination(pageUrl = "main/tabs/find",asStarter = false)
 public class FindFragment extends Fragment {
-
+    private String TAG = "FindFragment";
     private FindViewModel mFindViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        Log.e(TAG,"onCreateView");
         mFindViewModel =
                 ViewModelProviders.of(this).get(FindViewModel.class);
         View root = inflater.inflate(R.layout.fragment_notifications, container, false);

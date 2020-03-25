@@ -77,18 +77,21 @@ public class AppBottomBar extends BottomNavigationView {
             item.setIcon(icons[tab.getIndex()]);
 
         }
-
+        int _index = 0;
         for (int i = 0; i < tabsBeans.size(); i++) {
             BottomBar.TabsBean tab = tabsBeans.get(i);
             if (!tab.isEnable()) {
+                _index++;
                 continue;
             }
             int id = getId(tab.getPageUrl());
-            if (id < 0)
+            if (id < 0) {
+                _index++;
                 continue;
+            }
             int iconSize = dp2px(tab.getSize());
             BottomNavigationMenuView menuView = (BottomNavigationMenuView) getChildAt(0);
-            BottomNavigationItemView itemView = (BottomNavigationItemView) menuView.getChildAt(tab.getIndex());
+            BottomNavigationItemView itemView = (BottomNavigationItemView) menuView.getChildAt(i-_index);
             itemView.setIconSize(iconSize);
 
             if(TextUtils.isEmpty(tab.getTitle())){

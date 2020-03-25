@@ -1,6 +1,7 @@
 package com.prf.ppjoke.ui.sofa;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +18,12 @@ import androidx.lifecycle.ViewModelProviders;
 
 @FragmentDestination(pageUrl = "main/tabs/sofa",asStarter = false)
 public class SofaFragment extends Fragment {
-
+    private String TAG = "SofaFragment";
     private SofaViewModel mSofaViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        Log.e(TAG,"onCreateView");
         mSofaViewModel =
                 ViewModelProviders.of(this).get(SofaViewModel.class);
         View root = inflater.inflate(R.layout.fragment_notifications, container, false);

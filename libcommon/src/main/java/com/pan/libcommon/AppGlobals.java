@@ -1,4 +1,4 @@
-package com.prf.ppjoke.Utils;
+package com.pan.libcommon;
 
 import android.app.Application;
 
@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 
 /**
  * @author panruifeng
- * @date 2020/3/23.
+ * @date 2020/3/25.
  * @company: 5i5j
  * GitHub：
  * email：

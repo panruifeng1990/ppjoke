@@ -1,6 +1,7 @@
 package com.prf.ppjoke.ui.my;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +18,12 @@ import androidx.lifecycle.ViewModelProviders;
 
 @FragmentDestination(pageUrl = "main/tabs/my",asStarter = false)
 public class MyFragment extends Fragment {
-
+    private String TAG = "MyFragment";
     private MyViewModel mMyViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        Log.e(TAG,"onCreateView");
         mMyViewModel =
                 ViewModelProviders.of(this).get(MyViewModel.class);
         View root = inflater.inflate(R.layout.fragment_notifications, container, false);

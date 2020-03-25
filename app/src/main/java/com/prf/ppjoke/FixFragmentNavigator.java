@@ -83,7 +83,7 @@ public class FixFragmentNavigator extends FragmentNavigator {
         }else {
             frag = instantiateFragment(mContext,mManager,className,args);
             frag.setArguments(args);
-            ft.add(mContainerId,frag);
+            ft.add(mContainerId,frag,tag);
         }
 
 //        ft.replace(mContainerId, frag);
