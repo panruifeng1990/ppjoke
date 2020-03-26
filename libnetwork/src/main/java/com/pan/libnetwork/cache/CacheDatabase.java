@@ -2,6 +2,7 @@ package com.pan.libnetwork.cache;
 
 import com.pan.libcommon.AppGlobals;
 
+import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
@@ -13,7 +14,7 @@ import androidx.room.RoomDatabase;
  * email：
  * description：
  */
-//@Database(entities = {})
+@Database(entities = {Cache.class},version = 1,exportSchema = true)
 public abstract class CacheDatabase extends RoomDatabase {
     private static final CacheDatabase dataBase;
 
@@ -39,6 +40,7 @@ public abstract class CacheDatabase extends RoomDatabase {
                 .build();
     }
 
+    public abstract CacheDao getCache();
     public static CacheDatabase get() {
         return dataBase;
     }
