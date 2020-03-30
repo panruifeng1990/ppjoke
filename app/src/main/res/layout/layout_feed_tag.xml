@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="tagText"
+            type="String" />
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:backgroundTint="@color/color_gray"
+        android:text="@{tagText}"
+        android:textAppearance="?android:attr/textAppearance"
+        android:textColor="@color/color_2f2"
+        android:textSize="5dp"
+        android:stateListAnimator="@null"
+        app:cornerRadius="10dp"
+        app:backgroundTint="@color/color_gray"
+        app:icon="@mipmap/icon_tag"
+        app:iconGravity="textStart"
+        app:iconPadding="4dp"
+        app:iconSize="12dp"
+        app:iconTint="@color/color_theme"
+        app:iconTintMode="multiply"
+        tools:text="我来了">
+
+    </com.google.android.material.button.MaterialButton>
+</layout>

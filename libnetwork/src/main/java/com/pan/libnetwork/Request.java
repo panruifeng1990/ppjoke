@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.pan.libnetwork.cache.CacheManager;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -16,10 +18,6 @@ import java.util.Map;
 
 import androidx.annotation.IntDef;
 import androidx.arch.core.executor.ArchTaskExecutor;
-
-import com.alibaba.fastjson.JSONObject;
-import com.pan.libnetwork.cache.CacheManager;
-
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
@@ -226,6 +224,7 @@ public abstract class Request<T, R extends Request> implements Cloneable {
 
     private void saveCache(T body) {
         String key = TextUtils.isEmpty(cacheKey) ? generateCacheKey() : cacheKey;
+        CacheManager.save(key,body);
     }
 
     private String generateCacheKey() {
